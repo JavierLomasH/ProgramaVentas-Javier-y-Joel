@@ -48,8 +48,14 @@ int main() {
         
         switch(opcion) {
             case 1:
-                printf("Ingrese descuento: ");
-                scanf("%f", &descuento);
+                while(1){
+                    printf("Ingrese descuento: ");        
+                    if (scanf("%f", &descuento) == 1 && descuento >= 0){
+                        break;
+                    }        
+                    printf("Descuento inválido.\nIntente nuevamente: \n");        
+                    while (getchar() != '\n'); 
+                }
                 printf("se aplicara %.0f %% de descuento en las proximas compras\n",descuento);
                 break;
             case 2 :
